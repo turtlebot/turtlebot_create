@@ -1,21 +1,12 @@
 <stack>
-  <description brief="create">
-    Software for iRobot create
+  <description brief="turtlebot_create">
+    Software for iRobot create for turtlebot
   </description>
   <author>Willow</author>
   <license>BSD</license>  
   <review status="experimental" notes=""/>
-  <url>http://ros.org/wiki/kobuki</url>
-  <depend stack="common_msgs" /> <!-- nav_msgs, sensor_msgs, geometry_msgs, diagnostic_msgs -->
-  <depend stack="driver_common" /> <!-- dynamic reconfigure -->
-  <depend stack="geometry" /> <!-- tf -->
-  <depend stack="image_transport_plugins" /> <!-- compressed image transoport -->
-  <depend stack="joystick_drivers" /> <!--joy-->
-  <depend stack="nodelet_core"/>
-  <depend stack="openni_kinect" /> <!-- openni_camera -->
+  <url>http://ros.org/wiki/turtlebot_create</url>
   <depend stack="robot_model" /> <!-- robot_state_publisher -->
-  <depend stack="ros" /> <!-- roslib -->
-  <depend stack="ros_comm" /> <!-- std_msgs, topic_tools, rospy, roscpp -->
   <depend stack="xacro" /> <!-- xacro -->
 
 </stack>
