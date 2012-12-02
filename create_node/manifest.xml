@@ -12,7 +12,7 @@
   <author>Ken Conley, Melonee Wise</author>
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
-  <url>http://ros.org/wiki/turtlebot_node</url>
+  <url>http://ros.org/wiki/create_node</url>
   <depend package="create_driver"/>
   <depend package="rospy"/>
   <depend package="tf"/>
