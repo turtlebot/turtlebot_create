@@ -33,7 +33,7 @@
 #
 # Revision $Id: __init__.py 11217 2010-09-23 21:08:11Z kwc $
 
-import roslib; roslib.load_manifest('turtlebot_node')
+import roslib; roslib.load_manifest('create_node')
 
 """
 ROS Turtlebot node for ROS built on top of create_driver's
@@ -63,18 +63,18 @@ from nav_msgs.msg import Odometry
 from sensor_msgs.msg import JointState
 
 from turtlebot_driver import Turtlebot, MAX_WHEEL_SPEED, DriverError
-from turtlebot_node.msg import TurtlebotSensorState, Drive, Turtle
-from turtlebot_node.srv import SetTurtlebotMode,SetTurtlebotModeResponse, SetDigitalOutputs, SetDigitalOutputsResponse
-from turtlebot_node.diagnostics import TurtlebotDiagnostics
-from turtlebot_node.gyro import TurtlebotGyro
-import turtlebot_node.robot_types as robot_types
-from turtlebot_node.covariances import \
+from create_node.msg import TurtlebotSensorState, Drive, Turtle
+from create_node.srv import SetTurtlebotMode,SetTurtlebotModeResponse, SetDigitalOutputs, SetDigitalOutputsResponse
+from create_node.diagnostics import TurtlebotDiagnostics
+from create_node.gyro import TurtlebotGyro
+import create_node.robot_types as robot_types
+from create_node.covariances import \
      ODOM_POSE_COVARIANCE, ODOM_POSE_COVARIANCE2, ODOM_TWIST_COVARIANCE, ODOM_TWIST_COVARIANCE2
-from turtlebot_node.songs import bonus
+from create_node.songs import bonus
 
 #dynamic reconfigure
 import dynamic_reconfigure.server
-from turtlebot_node.cfg import TurtleBotConfig
+from create_node.cfg import TurtleBotConfig
 
 
 class TurtlebotNode(object):

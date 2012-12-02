@@ -34,9 +34,9 @@
 
 
 import roslib
-roslib.load_manifest('turtlebot_node')
+roslib.load_manifest('create_node')
 import rospy
-from turtlebot_node.srv import SetTurtlebotMode
+from create_node.srv import SetTurtlebotMode
 
 service = 'turtlebot_node/set_operation_mode'
 
