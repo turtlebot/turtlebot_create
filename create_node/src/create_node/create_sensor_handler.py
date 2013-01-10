@@ -37,7 +37,7 @@ import time
 import rospy
 
 from math import radians
-from turtlebot_driver import SENSOR_GROUP_PACKET_LENGTHS
+from create_driver import SENSOR_GROUP_PACKET_LENGTHS
 
 #_struct_I = roslib.message.struct_I
 _struct_BI = struct.Struct(">BI")
