@@ -62,11 +62,10 @@ from geometry_msgs.msg import Point, Pose, Pose2D, PoseWithCovariance, \
 from nav_msgs.msg import Odometry
 from sensor_msgs.msg import JointState
 
-from turtlebot_driver import Turtlebot, MAX_WHEEL_SPEED, DriverError
+from create_driver import Turtlebot, MAX_WHEEL_SPEED, DriverError
 from create_node.msg import TurtlebotSensorState, Drive, Turtle
 from create_node.srv import SetTurtlebotMode,SetTurtlebotModeResponse, SetDigitalOutputs, SetDigitalOutputsResponse
 from create_node.diagnostics import TurtlebotDiagnostics
-from create_node.gyro import TurtlebotGyro
 import create_node.robot_types as robot_types
 from create_node.covariances import \
      ODOM_POSE_COVARIANCE, ODOM_POSE_COVARIANCE2, ODOM_TWIST_COVARIANCE, ODOM_TWIST_COVARIANCE2
@@ -104,6 +103,7 @@ class TurtlebotNode(object):
 
         self._diagnostics = TurtlebotDiagnostics()
         if self.has_gyro:
+            from create_node.gyro import TurtlebotGyro
             self._gyro = TurtlebotGyro()
         else:
             self._gyro = None
