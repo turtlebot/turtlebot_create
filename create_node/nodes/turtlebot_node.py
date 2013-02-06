@@ -53,7 +53,7 @@ import time
 
 from math import sin, cos
 
-import roslib.rosenv
+import rospkg
 import rospy
 import tf
 
@@ -506,7 +506,7 @@ class TurtlebotNode(object):
              odometry.header.stamp, odometry.child_frame_id, odometry.header.frame_id)
 
 def connected_file():
-    return os.path.join(roslib.rosenv.get_ros_home(), 'turtlebot-connected')
+    return os.path.join(rospkg.get_ros_home(), 'turtlebot-connected')
 
 def turtlebot_main(argv):
     c = TurtlebotNode()
