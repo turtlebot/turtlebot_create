@@ -47,16 +47,11 @@ def set_to_full():
     rospy.init_node('io_mode_changer')
     rospy.wait_for_service(service)
     while True:
-        try:
-            service_proxy = rospy.ServiceProxy(service, SetTurtlebotMode)
-            service_proxy(3)
+        service_proxy = rospy.ServiceProxy(service, SetTurtlebotMode)
+        response = service_proxy(3)
+        if response.valid_mode:
             break
-        except Exception:
-            # Turtlebot node set_operation_node service will throw an exception
-            # if it isn't serially connected
-            # yet. Unfortunately it only throws a normal Exception (needs fixing)
-            # and it would be better if it threw a particular exception so we could
-            # handle the cases here
+        else:
             rospy.sleep(3)
             continue
 

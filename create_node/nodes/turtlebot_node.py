@@ -237,7 +237,8 @@ class TurtlebotNode(object):
 
     def set_operation_mode(self,req):
         if not self.robot.sci:
-            raise Exception("Robot not connected, SCI not available")
+            rospy.logwarn("Create : robot not connected yet, sci not available")
+            return SetTurtlebotModeResponse(False)
 
         self.operate_mode = req.mode
 
