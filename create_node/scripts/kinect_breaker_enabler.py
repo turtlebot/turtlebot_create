@@ -41,12 +41,24 @@ from create_node.srv import SetTurtlebotMode
 service = 'turtlebot_node/set_operation_mode'
 
 def set_to_full():
-
+    '''
+      This waits until it finds a serial connection and then sets the operation mode.
+    '''
     rospy.init_node('io_mode_changer')
     rospy.wait_for_service(service)
-    service_proxy = rospy.ServiceProxy(service, SetTurtlebotMode)
-    service_proxy(3)
-    
+    while True:
+        try:
+            service_proxy = rospy.ServiceProxy(service, SetTurtlebotMode)
+            service_proxy(3)
+            break
+        except Exception:
+            # Turtlebot node set_operation_node service will throw an exception
+            # if it isn't serially connected
+            # yet. Unfortunately it only throws a normal Exception (needs fixing)
+            # and it would be better if it threw a particular exception so we could
+            # handle the cases here
+            rospy.sleep(3)
+            continue
 
 if __name__ == '__main__':
     try:
