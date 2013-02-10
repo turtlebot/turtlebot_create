@@ -1,7 +1,7 @@
 <package>
-  <description brief="create_description">
+  <description brief="Robot description for the create base.">
 
-     create_description
+     Robot description (urdf) for the turtlebot create base.
 
   </description>
   <author>Jihoon</author>

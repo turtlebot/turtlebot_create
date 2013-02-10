@@ -20,6 +20,7 @@
   <depend package="geometry_msgs"/>
   <depend package="diagnostic_msgs"/>
   <depend package="dynamic_reconfigure"/>
+  <depend package="python_orocos_kdl"/>
   <export>
     <rosdoc config="rosdoc.yaml" />
   </export>
