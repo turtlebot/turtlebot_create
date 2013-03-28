@@ -1,16 +1,15 @@
 <package>
-  <description brief="Robot description for the create base.">
+  <description brief="Model for the iRobot Create">
 
-     Robot description (urdf) for the turtlebot create base.
+     Model description for the iRobot Create
 
   </description>
   <author>Jihoon</author>
   <license>BSD</license>
-  <review status="unreviewed" notes=""/>
+  <review status="experimental" notes=""/>
   <url>http://ros.org/wiki/create_description</url>
   <depend package="urdf"/>
   <depend package="xacro"/>
-
 </package>
 
 
