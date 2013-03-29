@@ -8,26 +8,13 @@
   <!-- Macro for TurtleBot body. Including Gazebo extensions, but does not include Kinect -->
   <include filename="$(find create_description)/urdf/create_gazebo.urdf.xacro"/>
 
-  <property name="base_x" value="0.33" />
-  <property name="base_y" value="0.33" />
-
 	  <xacro:macro name="create">
 	    <material name="Green">
 	      <color rgba="0.0 0.8 0.0 1.0"/>
 	    </material>
 	
 	  <!-- base_footprint is a fictitious link(frame) that is on the ground right below base_link origin, navigation stack depends on this frame -->
-	
 	  <link name="base_footprint">
-	<!--
-	    <inertial>
-	      <mass value="0.0001" />
-	      <origin xyz="0 0 0" />
-	      <inertia ixx="0.0001" ixy="0.0" ixz="0.0"
-	              iyy="0.0001" iyz="0.0" 
-	              izz="0.0001" />
-	    </inertial>
-	-->
 	    <visual>
 	      <origin xyz="0 0 0" rpy="0 0 0" />
 	      <geometry>
