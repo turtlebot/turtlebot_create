@@ -1,19 +1,40 @@
-cmake_minimum_required(VERSION 2.4.6)
-include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
+cmake_minimum_required(VERSION 2.8.3)
+project(create_node)
 
-rosbuild_init()
+find_package(catkin REQUIRED COMPONENTS create_driver
+                                        diagnostic_msgs
+                                        dynamic_reconfigure
+                                        geometry_msgs
+                                        message_generation
+                                        nav_msgs
+                                        python_orocos_kdl
+                                        rospy
+                                        tf)
 
-#set the default path for built executables to the "bin" directory
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
-#set the default path for built libraries to the "lib" directory
-set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+catkin_python_setup()
 
-#uncomment if you have defined messages
-rosbuild_genmsg()
-#uncomment if you have defined services
-rosbuild_gensrv()
+add_message_files(DIRECTORY msg
+                  FILES BatteryState.msg
+                        Drive.msg
+                        RawTurtlebotSensorState.msg
+                        RoombaSensorState.msg
+                        Turtle.msg
+                        TurtlebotSensorState.msg)
+                        
+add_service_files(DIRECTORY srv
+                  FILES SetDigitalOutputs.srv
+                        SetTurtlebotMode.srv)
 
-#add dynamic reconfigure api
-rosbuild_find_ros_package(dynamic_reconfigure)
-include(${dynamic_reconfigure_PACKAGE_PATH}/cmake/cfgbuild.cmake)
-gencfg()
+generate_messages(DEPENDENCIES diagnostic_msgs
+                               geometry_msgs
+                               nav_msgs)
+                               
+generate_dynamic_reconfigure_options(cfg/TurtleBot.cfg)
+
+catkin_package(CATKIN_DEPENDS diagnostic_msgs
+                              geometry_msgs
+                              message_runtime
+                              nav_msgs)
+
+install(PROGRAMS scripts/kinect_breaker_enabler.py
+        DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
