@@ -7,7 +7,6 @@ find_package(catkin REQUIRED COMPONENTS create_driver
                                         geometry_msgs
                                         message_generation
                                         nav_msgs
-                                        python_orocos_kdl
                                         rospy
                                         tf)
 
