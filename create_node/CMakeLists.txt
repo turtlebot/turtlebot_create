@@ -36,4 +36,5 @@ catkin_package(CATKIN_DEPENDS diagnostic_msgs
                               nav_msgs)
 
 install(PROGRAMS scripts/kinect_breaker_enabler.py
+                 nodes/turtlebot_node.py
         DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
