@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<robot xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor" xmlns:xacro="http://ros.org/wiki/xacro" name="turtlebot_gazebo">
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="turtlebot_gazebo">
 	<xacro:macro name="sim_create">
 	  <gazebo>
 	    <plugin name="create_controller" filename="libgazebo_ros_create.so">
@@ -12,7 +12,7 @@
 	      <rear_castor_joint>rear_castor_joint</rear_castor_joint>
 	      <wheel_separation>.260</wheel_separation>
 	      <wheel_diameter>0.066</wheel_diameter>
-	      <base_geom>base_link_geom_base_link</base_geom>
+	      <base_geom>base_footprint_collision_base_link</base_geom>
 	      <updateRate>40</updateRate>
 	      <torque>1.0</torque>
 	    </plugin>
@@ -55,6 +55,7 @@
 	      <updateRate>30</updateRate>
 	      <bodyName>gyro_link</bodyName>
 	      <topicName>imu/data</topicName>
+        <serviceName>imu/is_calibrated</serviceName>
 	      <gaussianNoise>${0.0017*0.0017}</gaussianNoise>
         <xyzOffsets>0 0 0</xyzOffsets> 
         <rpyOffsets>0 0 0</rpyOffsets>
