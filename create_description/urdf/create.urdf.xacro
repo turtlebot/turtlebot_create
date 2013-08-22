@@ -300,6 +300,5 @@
 	  <sim_create_wall_sensor/>
 	  <sim_create_cliff_sensors/>
     <sim_imu/>
-	  <sim_laser/>
   </xacro:macro>
 </robot>
