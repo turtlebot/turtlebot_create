@@ -117,7 +117,7 @@ class TurtlebotNode(object):
                 self.robot.start(self.port, robot_types.ROBOT_TYPES[self.robot_type].baudrate)
                 break
             except serial.serialutil.SerialException as ex:
-                msg = "Failed to open port %s.  Please make sure the Create cable is plugged into the computer. \n"%(self.port)
+                msg = "Failed to open port %s. Error: %s Please make sure the Create cable is plugged into the computer. \n"%((self.port), ex.message)
                 self._diagnostics.node_status(msg,"error")
                 if log_once:
                     log_once = False
