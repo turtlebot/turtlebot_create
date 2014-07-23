@@ -210,7 +210,6 @@ class SerialCommandInterface(object):
   """
   def __init__(self, tty, baudrate):
     self.ser = serial.Serial(tty, baudrate=baudrate, timeout=SERIAL_TIMEOUT)
-    self.ser.open()
     self.wake()
     self.opcodes = {}
 
