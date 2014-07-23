@@ -2,8 +2,8 @@
 Changelog for package create_node
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.2.1 (2014-07-23)
+------------------
 * Remove open() to fix double-open exception. Improve error info when an exception on opening serial port happens
 * Bug fixes
 * Attempt to use the usb to serial converter's id
