@@ -2,6 +2,9 @@
 Changelog for package create_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.2.0 (2013-08-30)
 ------------------
 * adds bugtracker and repo info to package.xml
