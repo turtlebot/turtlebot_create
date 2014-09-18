@@ -54,8 +54,8 @@ class TurtlebotGyro():
         self.imu_pub_raw = rospy.Publisher('imu/raw', sensor_msgs.msg.Imu)
 
     def reconfigure(self, config, level): 
-        self.gyro_measurement_range = rospy.get_param('~gyro_measurement_range', 150.0) 
-        self.gyro_scale_correction = rospy.get_param('~gyro_scale_correction', 1.35) 
+        self.gyro_measurement_range = config['gyro_measurement_range'] 
+        self.gyro_scale_correction = config['gyro_scale_correction']
         rospy.loginfo('self.gyro_measurement_range %f'%self.gyro_measurement_range) 
         rospy.loginfo('self.gyro_scale_correction %f'%self.gyro_scale_correction) 
 
