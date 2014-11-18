@@ -50,8 +50,8 @@ class TurtlebotGyro():
         self.imu_data.linear_acceleration_covariance = [-1,0,0,0,0,0,0,0,0]
         self.gyro_measurement_range = rospy.get_param('~gyro_measurement_range', 150.0) 
         self.gyro_scale_correction = rospy.get_param('~gyro_scale_correction', 1.35)
-        self.imu_pub = rospy.Publisher('imu/data', sensor_msgs.msg.Imu)
-        self.imu_pub_raw = rospy.Publisher('imu/raw', sensor_msgs.msg.Imu)
+        self.imu_pub = rospy.Publisher('imu/data', sensor_msgs.msg.Imu, queue_size=10)
+        self.imu_pub_raw = rospy.Publisher('imu/raw', sensor_msgs.msg.Imu, queue_size=10)
 
     def reconfigure(self, config, level): 
         self.gyro_measurement_range = config['gyro_measurement_range'] 

@@ -171,10 +171,10 @@ class TurtlebotNode(object):
         rospy.loginfo("has gyro: %s"%(self.has_gyro))
 
     def _init_pubsub(self):
-        self.joint_states_pub = rospy.Publisher('joint_states', JointState)
-        self.odom_pub = rospy.Publisher('odom', Odometry)
+        self.joint_states_pub = rospy.Publisher('joint_states', JointState, queue_size=10)
+        self.odom_pub = rospy.Publisher('odom', Odometry, queue_size=10)
 
-        self.sensor_state_pub = rospy.Publisher('~sensor_state', TurtlebotSensorState)
+        self.sensor_state_pub = rospy.Publisher('~sensor_state', TurtlebotSensorState, queue_size=10)
         self.operating_mode_srv = rospy.Service('~set_operation_mode', SetTurtlebotMode, self.set_operation_mode)
         self.digital_output_srv = rospy.Service('~set_digital_outputs', SetDigitalOutputs, self.set_digital_outputs)
 

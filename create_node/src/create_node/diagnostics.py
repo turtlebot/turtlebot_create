@@ -52,7 +52,7 @@ class TurtlebotDiagnostics():
         self.oi_mode = {1:"Passive",
                         2:"Safe",
                         3:"Full"}
-        self.diag_pub = rospy.Publisher('/diagnostics', DiagnosticArray)
+        self.diag_pub = rospy.Publisher('/diagnostics', DiagnosticArray, queue_size=10)
         self.last_diagnostics_time = rospy.get_rostime()        
 
     def node_status(self, msg, status):
