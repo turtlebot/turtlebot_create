@@ -2,6 +2,9 @@
 Changelog for package turtlebot_create
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.2.1 (2014-07-23)
 ------------------
 
