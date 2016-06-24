@@ -2,8 +2,8 @@
 Changelog for package create_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.3.1 (2016-06-24)
+------------------
 * update xacro:property tag usage to stricter standard
 * Fix base geometry collision size
 * Contributors: Tully Foote, trainman419
