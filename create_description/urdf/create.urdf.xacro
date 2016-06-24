@@ -4,8 +4,8 @@
   <!-- Macro for TurtleBot body. Including Gazebo extensions, but does not include Kinect -->
   <xacro:include filename="$(find create_description)/urdf/create_gazebo.urdf.xacro"/>
 
-  <property name="base_x" value="0.33" />
-  <property name="base_y" value="0.33" />
+  <xacro:property name="base_x" value="0.33" />
+  <xacro:property name="base_y" value="0.33" />
 
 	  <xacro:macro name="create">
 	    <material name="Green">
