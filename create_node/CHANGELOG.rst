@@ -2,6 +2,9 @@
 Changelog for package create_node
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.3.0 (2014-11-30)
 ------------------
 * Set queue size

@@ -2,6 +2,12 @@
 Changelog for package create_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* update xacro:property tag usage to stricter standard
+* Fix base geometry collision size
+* Contributors: Tully Foote, trainman419
+
 2.3.0 (2014-11-30)
 ------------------
 * -Fix extreme slipping of create base in gazebo by using same parameters that kobuki uses
