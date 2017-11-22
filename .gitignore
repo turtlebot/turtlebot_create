@@ -1,3 +1,4 @@
+.settings
 *.pyc
 build
 msg_gen
